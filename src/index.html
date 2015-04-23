@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="tink.skeleton">
+<html ng-app="tink.upload">
 <head>
   <meta charset="utf-8">
   <title>Tink module</title>
@@ -7,15 +7,67 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimum-scale=1.0">
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/tink-core/assets/tink/tink.css" />
   <!-- endbower -->
 </head>
 <body>
 
-<tink-skeleton data-text="Skeleton is working fine!"></tink-skeleton>
+ <div class="container">
+  <h1>Upload</h1>
+  <hr>
+
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Drag and drop multi</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div type="file" data-send-options="extraOptions" data-multiple="true" data-allowed-types="valid" edit-mode="true" tink-upload ng-model="files" show-uploaded-files="true">
+            Maximum grootte: 200MB</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header class="panel-heading">
+      <i class="fa fa-th-large"></i>
+      <h1 class="panel-title">Drag and drop</h1>
+    </header>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div type="file" data-send-options="extraOptions" data-multiple="false" data-allowed-types="valid" edit-mode="true" tink-upload ng-model="file" show-uploaded-files="true">
+            Maximum grootte: 200MB</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<button ng-click="showUp()"></button>
+</div>
+
 
 <!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
+<script src="bower_components/tink-helper-safe-apply-angular/dist/tink-helper-safe-apply-angular.js"></script>
+<script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
 <!-- endbower -->
 
-<script src="scripts/directives/skeleton.js"></script>
+<script src="scripts/directives/upload.js"></script>
+<script src="scripts/OO/UploadFile.js"></script>
+<script src="scripts/services/tinkUploadService.js"></script>
+
 </body>
 </html>
