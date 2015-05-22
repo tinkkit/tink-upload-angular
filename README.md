@@ -77,7 +77,7 @@ If you want to change the upload service just override our service.
 Attr | Type | Default | Details
 --- | --- | --- | ---
 data-max-file-size | `string` | `''` | If empty no max size allowed, file size is in kb.
-data-allowed-types | `object` | `{}` | If empty object all files are allowed, if you want to restrict use this object and add mimetypes and extensions. `{mimeTypes:[],extensions:[]}
+data-allowed-types | `object` | `{}` | If empty object all files are allowed, if you want to restrict use this object and add mimetypes and extensions. `{mimeTypes:[],extensions:[]}`
 data-multiple | `string | boolean` | `true` | If multiple files are allowed or not.
 
 #### API options
