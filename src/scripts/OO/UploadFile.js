@@ -3,7 +3,7 @@
   try {
     module = angular.module('tink.upload');
   } catch (e) {
-    module = angular.module('tink.upload', ['ngLodash','angularFileUpload','tink.safeApply']);
+    module = angular.module('tink.upload', ['ngLodash','ngFileUpload','tink.safeApply']);
   }
   module.factory('UploadFile',['$q','tinkUploadService',function($q,tinkUploadService) {
     var upload = null;

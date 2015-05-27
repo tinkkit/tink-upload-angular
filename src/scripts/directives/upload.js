@@ -3,7 +3,7 @@
   try {
     module = angular.module('tink.upload');
   } catch (e) {
-    module = angular.module('tink.upload', ['ngLodash','angularFileUpload','tink.safeApply']);
+    module = angular.module('tink.upload', ['ngLodash','ngFileUpload','tink.safeApply']);
   }
   module.directive('tinkUpload', ['$window', 'safeApply','UploadFile','lodash','tinkUploadService', function($window, safeApply,UploadFile,_,tinkUploadService) {
     return {

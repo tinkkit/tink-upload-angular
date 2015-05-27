@@ -3,12 +3,12 @@
   try {
     module = angular.module('tink.upload');
   } catch (e) {
-    module = angular.module('tink.upload', ['ngLodash','angularFileUpload','tink.safeApply']);
+    module = angular.module('tink.upload', ['ngLodash','ngFileUpload','tink.safeApply']);
   }
   module.provider('tinkUploadService',['lodash', function (_) {
     var urls = {};
     return {
-      $get: function ($upload) {
+      $get: function (Upload) {
         return {
           upload: function(file,options){
             if(file.getData() instanceof window.File){
@@ -26,7 +26,7 @@
               }
 
               var data = angular.extend({}, {url:sendUrl,file: file.getData()}, options);
-              return $upload.upload(data);
+              return Upload.upload(data);
             }else{
               throw 'No instanceof uploadfile';
             }

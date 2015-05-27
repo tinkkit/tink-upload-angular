@@ -14,7 +14,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+## [1.1.0] - 2015-05-27
 
+### Added
+- Added update of the ng-fileupload
+
+### Fixed
+- Fixed bug of uploading in IE
 
 ## [1.0.1] - 2015-05-08
 
