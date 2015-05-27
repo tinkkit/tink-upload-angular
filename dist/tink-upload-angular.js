@@ -3,7 +3,7 @@
   try {
     module = angular.module('tink.upload');
   } catch (e) {
-    module = angular.module('tink.upload', ['ngLodash','angularFileUpload','tink.safeApply']);
+    module = angular.module('tink.upload', ['ngLodash','ngFileUpload','tink.safeApply']);
   }
   module.factory('UploadFile',['$q','tinkUploadService',function($q,tinkUploadService) {
     var upload = null;
@@ -99,7 +99,7 @@
   try {
     module = angular.module('tink.upload');
   } catch (e) {
-    module = angular.module('tink.upload', ['ngLodash','angularFileUpload','tink.safeApply']);
+    module = angular.module('tink.upload', ['ngLodash','ngFileUpload','tink.safeApply']);
   }
   module.directive('tinkUpload', ['$window', 'safeApply','UploadFile','lodash','tinkUploadService', function($window, safeApply,UploadFile,_,tinkUploadService) {
     return {
@@ -428,12 +428,12 @@
   try {
     module = angular.module('tink.upload');
   } catch (e) {
-    module = angular.module('tink.upload', ['ngLodash','angularFileUpload','tink.safeApply']);
+    module = angular.module('tink.upload', ['ngLodash','ngFileUpload','tink.safeApply']);
   }
   module.provider('tinkUploadService',['lodash', function (_) {
     var urls = {};
     return {
-      $get: function ($upload) {
+      $get: function (Upload) {
         return {
           upload: function(file,options){
             if(file.getData() instanceof window.File){
@@ -451,7 +451,7 @@
               }
 
               var data = angular.extend({}, {url:sendUrl,file: file.getData()}, options);
-              return $upload.upload(data);
+              return Upload.upload(data);
             }else{
               throw 'No instanceof uploadfile';
             }
@@ -483,9 +483,8 @@
   'use strict';
 
   $templateCache.put('templates/tinkUpload.html',
-    "<div class=upload> <div class=upload-zone> <div data-ng-mouseup=browseFiles($event)> <strong translate>Sleep hier een bestand</strong> <span translate>of klik om te bladeren</span>\n" +
-    "<input data-ng-if=multiple class=upload-file-input name={{fieldName}} type=file data-ng-file-select=onFileSelect($files) multiple>\n" +
-    "<input data-ng-if=!multiple class=upload-file-input name={{fieldName}} type=file data-ng-file-select=\"onFileSelect($files)\"> </div> <span class=help-block data-ng-transclude>Toegelaten bestanden: jpg, gif, png, pdf. Maximum grootte: 2MB</span> </div> <p class=upload-file-change data-ng-if=message.hold>De vorige file werd vervangen. <a data-ng-mouseup=undo($event)>Ongedaan maken.</a></p> <ul class=upload-files> <li data-ng-repeat=\"file in files\" data-ng-class=\"{'success': !file.error && file.getProgress() === 100, 'error': file.error}\"> <span class=upload-filename>{{file.getFileName()}}</span>\n" +
+    "<div class=upload> <div class=upload-zone> <div> <strong translate>Sleep hier een bestand</strong> <span translate>of klik om te bladeren</span>\n" +
+    "<input class=upload-file-input name={{fieldName}} type=file ngf-select ngf-change=onFileSelect($files) ngf-multiple=multiple>  </div> <span class=help-block data-ng-transclude>Toegelaten bestanden: jpg, gif, png, pdf. Maximum grootte: 2MB</span> </div> <p class=upload-file-change data-ng-if=message.hold>De vorige file werd vervangen. <a data-ng-mouseup=undo($event)>Ongedaan maken.</a></p> <ul class=upload-files> <li data-ng-repeat=\"file in files\" data-ng-class=\"{'success': !file.error && file.getProgress() === 100, 'error': file.error}\"> <span class=upload-filename>{{file.getFileName()}}</span>\n" +
     "<span class=upload-fileoptions> <button class=upload-btn-delete data-ng-click=del($index) data-ng-if=\"file.getProgress() === 100 || file.error\"><span class=sr-only>Verwijder</span></button>\n" +
     "<span class=upload-feedback data-ng-if=\"!file.error && file.getProgress() !== 100\">{{file.getProgress()}}%</span> </span>\n" +
     "<span class=upload-error data-ng-if=file.error> <span data-ng-if=file.error.type>Dit bestandstype is niet toegelaten.</span>\n" +
