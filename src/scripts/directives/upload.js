@@ -33,11 +33,11 @@
 
             //Config object with default values
             var config = {
-              multiple:true,
-              removeFromServer:true,
+              multiple: scope.multiple || true,
+              removeFromServer: true,
               allowedTypes:{mimeTypes:[],extensions:[]},
-              maxFileSize:'0',
-              url:undefined,
+              maxFileSize:scope.maxFileSize || '0',
+              url: scope.url || undefined,
               options:{}
             };
             //To let the view know we have a message.
