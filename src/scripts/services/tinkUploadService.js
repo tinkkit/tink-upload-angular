@@ -1,4 +1,9 @@
 'use strict';
+
+/*
+This script is for testing purposes only and will not be built into tink-upload-angular.js
+ */
+
 (function(module) {
   try {
     module = angular.module('tink.upload');

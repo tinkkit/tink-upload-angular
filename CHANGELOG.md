@@ -14,6 +14,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Security
 -->
 
+## [1.1.1] - 2015-06-04
+
+### Fixed
+- Removed redundant code
+
+
+
 ## [1.1.0] - 2015-05-27
 
 ### Added
@@ -21,6 +28,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Fixed bug of uploading in IE
+
+
 
 ## [1.0.1] - 2015-05-08
 
