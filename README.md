@@ -1,6 +1,6 @@
 # Tink upload Angular directive
 
-v1.1.1
+v1.1.2
 
 ## What is this repository for?
 
@@ -19,25 +19,33 @@ Tink is an in-house developed easy-to-use front-end framework for quick prototyp
 
 1. Go to the root of your project and type the following command in your terminal:
 
-  `bower install tink-upload-angular --save`
+   `bower install tink-upload-angular --save`
 
 2. Add the following files to your project:
 
-  `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
+   `<link rel="stylesheet" href="bower_components/tink-core/dist/tink.css" />` (or one of the Tink themes)
 
-  `<script src="bower_components/tink-upload-angular/dist/tink-upload-angular.js"></script>`
+   `<script src="bower_components/tink-upload-angular/dist/tink-upload-angular.js"></script>`
+
+   `<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>`
+
+   `<script src="bower_components/ng-lodash/build/ng-lodash.js"></script>`
+
+   `<script src="bower_components/tink-helper-safe-apply-angular/dist/tink-helper-safe-apply-angular.js"></script>`
+
+3. Add 'tink.upload' to your app module's dependency.
+
+   `angular.module('myApp', ['tink.upload']);`
+
 
 
 ----------
 
 
+
 ## How to use
 
 ### tink-upload
-
-### Component
-
-###### HTML code: ######
 
 ```html
 <div type="file" data-multiple="true" data-allowed-types="valid" tink-upload="" ng-model="files">
@@ -118,6 +126,10 @@ file.upload();
 // Remove the file
 file.remove();
 ```
+
+###Example
+
+A working example can be found on [the Tink documentation](http://tink.digipolis.be/#/docs/directives/upload#example).
 
 ## Contribution guidelines
 
