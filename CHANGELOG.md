@@ -15,10 +15,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 -->
 
 
+## [1.1.4] - 2015-08-26
+
+### Fixed
+- Fixed documentation
+
+
+
 ## [1.1.3] - 2015-07-29
 
 ### Changed
 - Changed angular version to 1.4.3
+
+
 
 ## [1.1.2] - 2015-06-10
 

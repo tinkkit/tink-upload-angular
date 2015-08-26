@@ -1,6 +1,6 @@
 # Tink upload Angular directive
 
-v1.1.3
+v1.1.4
 
 ## What is this repository for?
 
@@ -86,7 +86,7 @@ Attr | Type | Default | Details
 --- | --- | --- | ---
 data-max-file-size | `string` | `''` | If empty no max size allowed, file size is in kb.
 data-allowed-types | `object` | `{}` | If empty object all files are allowed, if you want to restrict use this object and add mimetypes and extensions. `{mimeTypes:[],extensions:[]}`
-data-multiple | `string | boolean` | `true` | If multiple files are allowed or not.
+data-multiple | `string/boolean` | `true` | If multiple files are allowed or not.
 
 #### API options
 
